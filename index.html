@@ -1,215 +1,521 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Busannagari Savarni| Portfolio</title>
-  <style>
-    /* Reset */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: "Segoe UI", Tahoma, sans-serif;
-      line-height: 1.6;
-      background: #f4f6f9;
-      color: #333;
-    }
-    header {
-      background: #2c3e50;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 40px 60px;
-      flex-wrap: wrap;
-    }
-    .header-text {
-      max-width: 60%;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #ddd;
-    }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      border: 4px solid #1abc9c;
-      object-fit: cover;
-    }
-    nav {
-      background: #34495e;
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      color: #1abc9c;
-    }
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 15px;
-      border-bottom: 3px solid #1abc9c;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 15px;
-    }
-    ul li::before {
-      content: "✔ ";
-      color: #1abc9c;
-    }
-    .skills span {
-      display: inline-block;
-      background: #1abc9c;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      margin: 5px;
-      font-size: 0.9rem;
-    }
-    footer {
-      background: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
-    }
-    footer a {
-      color: #1abc9c;
-      text-decoration: none;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Busannagari Savarni | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f5f7fa;
+    color:#333;
+}
+
+/* HERO SECTION */
+
+header{
+    min-height:100vh;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+    padding:50px;
+}
+
+.header-text{
+    max-width:650px;
+}
+
+.header-text h1{
+    font-size:3.5rem;
+    margin-bottom:10px;
+}
+
+.header-text h3{
+    color:#00ffd5;
+    margin-bottom:15px;
+}
+
+.header-text p{
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.btn{
+    display:inline-block;
+    padding:12px 25px;
+    background:#00ffd5;
+    color:#222;
+    text-decoration:none;
+    border-radius:30px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+.profile-pic{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #00ffd5;
+    box-shadow:0 0 30px rgba(0,255,213,.5);
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.1);
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:15px;
+}
+
+nav a{
+    text-decoration:none;
+    color:#2a5298;
+    font-weight:600;
+}
+
+nav a:hover{
+    color:#00b894;
+}
+
+/* SECTION */
+
+section{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.section-card{
+    background:white;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+h2{
+    color:#2a5298;
+    margin-bottom:25px;
+    position:relative;
+}
+
+h2::after{
+    content:"";
+    width:60px;
+    height:4px;
+    background:#00b894;
+    position:absolute;
+    left:0;
+    bottom:-8px;
+}
+
+/* EDUCATION */
+
+.edu-item{
+    margin-bottom:25px;
+}
+
+/* SKILLS */
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.skills span{
+    background:linear-gradient(135deg,#00b894,#00cec9);
+    color:white;
+    padding:10px 18px;
+    border-radius:25px;
+    transition:.3s;
+}
+
+.skills span:hover{
+    transform:scale(1.08);
+}
+
+/* PROJECTS */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.project{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition:.4s;
+    border-top:5px solid #00b894;
+}
+
+.project:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.project h3{
+    color:#2a5298;
+    margin-bottom:10px;
+}
+
+.project p{
+    margin:15px 0;
+}
+
+/* CONTACT */
+
+.contact p{
+    margin:12px 0;
+}
+
+/* FOOTER */
+
+footer{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+    text-align:center;
+    padding:40px 20px;
+    margin-top:60px;
+}
+
+footer h3{
+    margin-bottom:10px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:#00ffd5;
+    text-decoration:none;
+    margin:0 10px;
+    font-weight:600;
+}
+
+.footer-links a:hover{
+    color:white;
+}
+
+.copyright{
+    color:#94a3b8;
+    margin-top:15px;
+}
+
+.tagline{
+    color:#cbd5e1;
+    margin-top:10px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+    text-align:center;
+}
+
+.header-text h1{
+    font-size:2.5rem;
+}
+
+.profile-pic{
+    width:200px;
+    height:200px;
+}
+
+nav{
+    flex-wrap:wrap;
+    gap:15px;
+}
+}
+
+</style>
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="header-text">
-      <h1>Busannagari Savarni</h1>
-      <p>B.Tech 3rd Year Student | Aspiring Software Engineer</p>
-    </div>
-    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
-  </header>
+<header>
 
-  <!-- NAVIGATION -->
-  <nav>
+    <div class="header-text">
+
+        <h1>Busannagari Savarni</h1>
+
+        <h3>Aspiring Software Engineer | AWS Cloud Enthusiast</h3>
+
+        <p>
+            B.Tech Computer Science Engineering student with strong interests
+            in Software Development, Data Structures & Algorithms, Cloud
+            Computing, and Problem Solving. Passionate about building
+            impactful technology solutions and continuously learning
+            emerging technologies.
+        </p>
+
+        <a href="#contact" class="btn">Get In Touch</a>
+
+    </div>
+
+    <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
+
+</header>
+
+<nav>
     <a href="#about">About</a>
     <a href="#education">Education</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#certifications">Certifications</a>
+    <a href="#certifications">Achievements</a>
     <a href="#contact">Contact</a>
-  </nav>
+</nav>
 
-  <!-- ABOUT -->
- <section id="about">
-  <h2>About Me</h2>
-  <p>
-    I am a 3rd year B.Tech Computer Science student with a strong interest in 
-    software development, problem-solving, and cloud computing. I enjoy working 
-    on real-time projects and continuously improving my coding skills in 
-    Data Structures and Algorithms.  
-    <br><br>
-    As an active learner, I have participated in hackathons, technical events, 
-    and online courses, which helped me build both technical expertise and 
-    teamwork skills. I am passionate about exploring new technologies, 
-    building impactful projects, and preparing for a career in the IT industry.
-  </p>
-</section>
+<section id="about">
+    <div class="section-card">
 
-  <!-- EDUCATION -->
- 
-<section id="education">
-  <h2>Education</h2>
-  <ul>
-    <li>
-      <strong>B.Tech in Computer Science and Engineering</strong>  
-      <br> Sri Venkateswara College of Engineering,Tirupati,Andhra Pradesh.
-      <br> Year: 2023 – 2027 (Pursuing)  
-      <br> Current GPA: 9.35 / 10
-    </li>
-    <br>
-    <li>
-      <strong>Intermediate (Class 12)</strong>  
-      <br> Sri Chaitanya Junior College, Tirupati,Andhra Pradesh.
-      <br> Year: 2021 – 2023 
-      <br> Percentage: 96.7%
-    </li>
-    <br>
-    <li>
-      <strong>Secondary School (Class 10)</strong>  
-      <br> Sri Chaitanya Tecchno School,Venkatagiri,,Tirupati District,Andhra Pradesh. 
-      <br> Year :2020-2021 
-      <br> GPA: 10 / 10
-    </li>
-  </ul>
-</section>
-  <!-- SKILLS -->
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>C</span>
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>AWS Cloud</span>
-      <span>Git & GitHub</span>
+        <h2>About Me</h2>
+
+        <p>
+            I am a third-year Computer Science Engineering student at
+            Sri Venkateswara College of Engineering, Tirupati. My interests
+            include Software Development, Cloud Computing, Data Structures,
+            Algorithms, and Web Technologies.
+        </p>
+
+        <br>
+
+        <p>
+            Through hackathons, technical events, certifications, and
+            project-based learning, I continuously improve my technical
+            expertise and teamwork skills while preparing for a successful
+            career in the IT industry.
+        </p>
+
     </div>
-  </section>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
+<section id="education">
+    <div class="section-card">
+
+        <h2>Education</h2>
+
+        <div class="edu-item">
+            <h3>B.Tech in Computer Science and Engineering</h3>
+            <p>Sri Venkateswara College of Engineering, Tirupati</p>
+            <p>2023 – 2027 (Pursuing)</p>
+            <p><strong>CGPA:</strong> 9.35 / 10</p>
+        </div>
+
+        <div class="edu-item">
+            <h3>Intermediate (Class 12)</h3>
+            <p>Sri Chaitanya Junior College, Tirupati</p>
+            <p>Percentage: 96.7%</p>
+        </div>
+
+        <div class="edu-item">
+            <h3>Secondary School (Class 10)</h3>
+            <p>Sri Chaitanya Techno School</p>
+            <p>GPA: 10 / 10</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="skills">
+    <div class="section-card">
+
+        <h2>Skills</h2>
+
+        <div class="skills">
+            <span>Python</span>
+            <span>C</span>
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+            <span>AWS Cloud</span>
+            <span>Git & GitHub</span>
+            <span>Data Structures</span>
+            <span>Algorithms</span>
+        </div>
+
+    </div>
+</section>
+
+<section id="projects">
+
     <h2>Projects</h2>
-    <ul>
-      <li><b>Portfolio Website</b> – A personal website hosted on GitHub Pages.</li>
-      <li><b>Mini Project</b> – Working on real time projects on DSA from Corizo edutech.</li>
-    </ul>
-  </section>
 
-  <!-- CERTIFICATIONS -->
-  <section id="certifications">
-    <h2>Certifications & Achievements</h2>
-    <ul>
-      <li>Completed AWS Academy Cloud Foundations</li>
-      <li>Winner – Building with Bits (Robotics Quiz)</li>
-      <li>Participation – GDG Innohacks</li>
-      <li>IEEE Student Member</li>
-    </ul>
-  </section>
+    <div class="project-grid">
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><b>Email:</b> mahathireddy0212@gmail.com</p>
-    <p><b>LinkedIn:</b> <a href="https://www.linkedin.com/in/savarnireddy-busannagari-42913732a/" target="_blank">View Profile</a></p>
-    <p><b>GitHub:</b> <a href="https://github.com/SavarniReddy" target="_blank">My GitHub</a></p>
-  </section>
+        <div class="project">
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Savarni Busannagari | Built with ❤ using HTML & CSS | 
-      <a href="https://github.com/SavarniReddy/savarnireddy.github.io" target="_blank">Source Code</a>
+            <h3>📚 Library Management System</h3>
+
+            <p>
+                A Data Structures & Algorithms based project for managing
+                library operations, book records, and issue-return tracking.
+            </p>
+
+            <a href="https://github.com/SavarniReddy/library-management-system"
+               target="_blank"
+               class="btn">
+               View Project
+            </a>
+
+        </div>
+
+        <div class="project">
+
+            <h3>📦 Inventory Management System</h3>
+
+            <p>
+                A DSA-based inventory application for managing products,
+                stock levels, and inventory records efficiently.
+            </p>
+
+            <a href="https://github.com/SavarniReddy/Inventory-management-system"
+               target="_blank"
+               class="btn">
+               View Project
+            </a>
+
+        </div>
+
+        <div class="project">
+
+            <h3>🌐 Personal Portfolio Website</h3>
+
+            <p>
+                Responsive portfolio website showcasing education,
+                skills, projects, certifications, and achievements.
+            </p>
+
+            <a href="https://github.com/SavarniReddy/savarnireddy.github.io"
+               target="_blank"
+               class="btn">
+               Source Code
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="certifications">
+    <div class="section-card">
+
+        <h2>Certifications & Achievements</h2>
+
+        <ul>
+            <li>AWS Academy Cloud Foundations</li>
+            <li>Winner – Building with Bits (Robotics Quiz)</li>
+            <li>Participation – GDG Innohacks</li>
+            <li>IEEE Student Member</li>
+        </ul>
+
+    </div>
+</section>
+
+<section id="contact">
+    <div class="section-card contact">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+            I am always interested in discussing software development,
+            cloud technologies, internships, research opportunities,
+            and collaborative projects.
+        </p>
+
+        <br>
+
+        <p><strong>Email:</strong> mahathireddy0212@gmail.com</p>
+
+        <p>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/savarnireddy-busannagari-42913732a/"
+               target="_blank">
+               Connect with me
+            </a>
+        </p>
+
+        <p>
+            <strong>GitHub:</strong>
+            <a href="https://github.com/SavarniReddy"
+               target="_blank">
+               github.com/SavarniReddy
+            </a>
+        </p>
+
+    </div>
+</section>
+
+<footer>
+
+    <h3>Busannagari Savarni</h3>
+
+    <p>
+        Computer Science Engineering Student |
+        Software Developer |
+        AWS Cloud Enthusiast
     </p>
-  </footer>
+
+    <div class="footer-links">
+
+        <a href="https://github.com/SavarniReddy" target="_blank">
+            GitHub
+        </a>
+
+        |
+
+        <a href="https://www.linkedin.com/in/savarnireddy-busannagari-42913732a/"
+           target="_blank">
+           LinkedIn
+        </a>
+
+    </div>
+
+    <p class="copyright">
+        © 2026 Busannagari Savarni. All Rights Reserved.
+    </p>
+
+    <p class="tagline">
+        Designed & Developed with HTML, CSS, and a passion for technology 🚀
+    </p>
+
+</footer>
 
 </body>
 </html>
+```
